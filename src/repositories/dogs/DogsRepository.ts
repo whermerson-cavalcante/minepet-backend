@@ -13,17 +13,13 @@ export class DogsRepository implements IDogsRepository {
   async create({
     dogname,
     breed,
-    birth_day,
-    birth_month,
-    birth_year,
+    birth_date,
     user_id,
   }: CreateDogDTO): Promise<Dog> {
     const dog = this.repository.create({
       dogname,
       breed,
-      birth_day,
-      birth_month,
-      birth_year,
+      birth_date,
       user_id,
     });
 

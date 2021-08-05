@@ -15,7 +15,7 @@ export class CreateDogController {
       user_id,
       dogname,
       breed,
-      birth_date: new Date(String(birth_date)),
+      birth_date: String(birth_date)
     });
 
     return response.status(201).json(classToClass(dog));

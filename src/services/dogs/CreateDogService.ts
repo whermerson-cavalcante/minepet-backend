@@ -7,7 +7,7 @@ interface IRequest {
   user_id: string;
   dogname: string;
   breed: string;
-  birth_date: Date;
+  birth_date: string;
 }
 
 export class CreateDogService {
@@ -22,11 +22,13 @@ export class CreateDogService {
 
     const user = await usersRepository.findById(user_id);
     if (!user) throw new AppError("Ivalid user", 401);
+
+    const formatBirthDate = new Date(birth_date);
     
     const dog = await dogsRepository.create({
       dogname,
       breed,
-      birth_date,
+      birth_date: formatBirthDate,
       user_id,
     });
     
