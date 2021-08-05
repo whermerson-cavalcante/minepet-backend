@@ -28,16 +28,7 @@ export class Dog {
   breed: string;
 
   @Column()
-  birth_day: number;
-
-  @Column()
-  birth_month: number;
-
-  @Column()
-  birth_year: number;
-
-  @Column()
-  dog_image?: string;
+  birth_date: Date;
 
   @CreateDateColumn()
   created_at: Date;

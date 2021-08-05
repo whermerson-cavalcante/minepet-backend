@@ -17,9 +17,9 @@ dogRouter.post(
     [Segments.BODY]: Joi.object().keys({
       dogname: Joi.string().required(),
       breed: Joi.string().required(),
-      birth_day: Joi.number().required(),
-      birth_month: Joi.number().required(),
-      birth_year: Joi.number().required(),
+    }),
+    [Segments.QUERY]: Joi.object().keys({
+      birth_date: Joi.date()
     }),
   }),
   auth.userAuth,

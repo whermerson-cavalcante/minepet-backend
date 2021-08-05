@@ -8,15 +8,14 @@ export class CreateDogController {
     const createDogService = new CreateDogService();
 
     const user_id = request.user.id;
-    const { dogname, breed, birth_day, birth_month, birth_year } = request.body;
+    const { dogname, breed } = request.body;
+    const { birth_date } = request.query;
 
     const dog = await createDogService.execute({
       user_id,
       dogname,
       breed,
-      birth_day,
-      birth_month,
-      birth_year,
+      birth_date: new Date(String(birth_date)),
     });
 
     return response.status(201).json(classToClass(dog));

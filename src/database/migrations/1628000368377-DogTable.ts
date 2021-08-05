@@ -27,17 +27,9 @@ export class DogTable1628000368377 implements MigrationInterface {
             isNullable: true,
           },
           {
-            name: "birth_day",
-            type: "integer",
+            name: "birth_date",
+            type: "timestamp",
             isNullable: true,
-          },
-          {
-            name: "birth_month",
-            type: "integer",
-          },
-          {
-            name: "birth_year",
-            type: "integer",
           },
           {
             name: "dog_image",
