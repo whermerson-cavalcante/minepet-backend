@@ -25,4 +25,14 @@ export class DogsRepository implements IDogsRepository {
 
     return this.repository.save(dog);
   }
+
+  async save(dog: Dog): Promise<Dog> {
+    return this.repository.save(dog);
+  }
+
+  async findById(id: string): Promise<Dog | undefined> {
+    const dog = await this.repository.findOne(id);
+
+    return dog;
+  }
 }
